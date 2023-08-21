@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterView } from 'vue-router';
 import { navElements } from "@/menu-elements";
 import DummyComponent from "@/components/DummyComponent.vue";
-const links = ["Dashboard", "Messages", "Profile", "Updates"];
 </script>
 
 <template>
@@ -11,18 +10,15 @@ const links = ["Dashboard", "Messages", "Profile", "Updates"];
       <v-container class="fill-height d-flex align-center">
         <v-avatar class="me-10 ms-4" color="grey-darken-1" size="32"></v-avatar>
 
-        <!-- Навигация из файла App.vue -->
+        <!-- Навигация -->
         <nav>
-          <RouterLink
+          <v-btn
             v-for="(navElement, i) in navElements"
             :key="i"
             :to="navElement.path"
-          >{{ navElement.nameMenu }}</RouterLink>
+            variant="text"
+          >{{ navElement.nameMenu }}</v-btn>
         </nav>
-
-        <v-btn v-for="link in links" :key="link" variant="text">
-          {{ link }}
-        </v-btn>
 
         <v-spacer></v-spacer>
 
