@@ -12,5 +12,12 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  // подпапка на сервере
+  base: "/Vue-Firebase-II",
+  // Во время сборки для продукции...
+  build: {
+    // сборка должна быть создана в папке "docs"
+    outDir: "docs",
   }
 })
