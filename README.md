@@ -1,46 +1,38 @@
-# vue-firebase-ii
+# Эксперименты Vue 3 с Firebase
+Разбираюсь как к [Vue 3](https://vuejs.org/) подключить к [Firebase](https://firebase.google.com/) и как с этим работать.
 
-This template should help get you started developing with Vue 3 in Vite.
+В проекте так же будет использоваться [TypeScript](https://www.typescriptlang.org), а Vue.js вместе с Composition API. Vue будет установлено при помощи [Vite](https://vitejs.dev/).
 
-## Recommended IDE Setup
+[Основная страница проекта](https://laboratorynotices.wordpress.com/2023/08/18/vue-3-firebase-2/).
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[Демонстрация проекта](https://laboratorynotices.github.io/Vue-Firebase-II/).
 
-## Type Support for `.vue` Imports in TS
+Так же постараюсь придерживаться [соглашению о коммитах](https://www.conventionalcommits.org), по крайней мере, как я это буду понимать.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Краткий список команд
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
+запуск виртуального сервера для разработки:
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
+сборка версии для продукции:
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+запуск уже собранной (build) версии:
+```sh
+npm run preview
+```
 
+Но, чтобы открыть доступ к виртуальному серверу по сети надо добавить суффикс «-- --host». Т.е. для разработки и теста по сети буду использовать:
+
+```sh
+npm run dev -- --host
+```
+
+Обработка Lint
 ```sh
 npm run lint
 ```
