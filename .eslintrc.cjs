@@ -11,5 +11,7 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
-  }
+  },
+  // Не будем проверять файлы в папке docs
+  ignorePatterns: ["docs/*"]
 }
