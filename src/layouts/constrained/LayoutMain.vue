@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
-import { navElements } from "@/menu-elements";
+import MainNav from "@/layouts/constrained/MainNav.vue";
 import DummyComponent from "@/components/DummyComponent.vue";
 </script>
 
@@ -10,15 +10,7 @@ import DummyComponent from "@/components/DummyComponent.vue";
       <v-container class="fill-height d-flex align-center">
         <v-avatar class="me-10 ms-4" color="grey-darken-1" size="32"></v-avatar>
 
-        <!-- Навигация -->
-        <nav>
-          <v-btn
-            v-for="(navElement, i) in navElements"
-            :key="i"
-            :to="navElement.path"
-            variant="text"
-          >{{ navElement.nameMenu }}</v-btn>
-        </nav>
+        <main-nav></main-nav>
 
         <v-spacer></v-spacer>
 
