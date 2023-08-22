@@ -1,14 +1,19 @@
+import type { Group } from "@/types";
 import { db } from "./config";
 import { collection, getDocs } from "firebase/firestore";
 
+const collectionName: string = "groups";
+
 /**
- * Возвращает все документы "крупп", что записаны в Firebase.
- * Пока не возвращает, но будет.
+ * Возвращает все документы "групп", что записаны в Firebase.
  */
-export const getGroups = async (): Promise<void> => {
-  const querySnapshot = await getDocs(collection(db, "groups"));
+export const getGroups = async (): Promise<Group[]> => {
+  const querySnapshot = await getDocs(collection(db, collectionName));
+  // Объявляем переменную, куда будем собирать прочитанные данные.
+  const groups: Group[] = [];
   querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+    // По очереди добавляем данные в переменную
+    groups.push({ id: doc.id, ...doc.data() } as Group);
   });
+  return groups;
 };
