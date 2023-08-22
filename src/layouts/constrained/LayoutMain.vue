@@ -7,7 +7,7 @@ import DummyComponent from "@/components/DummyComponent.vue";
 
 <template>
   <v-app id="inspire">
-    <v-app-bar flat>
+    <v-app-bar>
       <v-container class="fill-height d-flex align-center">
         <v-avatar class="me-10 ms-4" color="grey-darken-1" size="32"></v-avatar>
 
@@ -31,7 +31,7 @@ import DummyComponent from "@/components/DummyComponent.vue";
           <app-main-col-left></app-main-col-left>
 
           <v-col>
-            <v-sheet min-height="70vh" rounded="lg">
+            <v-sheet min-height="70vh" rounded="lg" elevation="4">
               <!-- Подключение страниц маршрутизатором из файла App.vue -->
               <router-view />
 
