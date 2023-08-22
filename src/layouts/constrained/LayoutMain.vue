@@ -36,7 +36,7 @@ import DummyComponent from "@/components/DummyComponent.vue";
           <app-main-col-left></app-main-col-left>
 
           <v-col>
-            <v-sheet min-height="70vh" rounded="lg" elevation="4">
+            <v-sheet min-height="70vh" rounded="lg" elevation="4" class="pa-6">
               <!-- Подключение страниц маршрутизатором из файла App.vue -->
               <router-view />
 
