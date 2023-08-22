@@ -7,6 +7,14 @@ import type { MenuAndRouteElement, RouterLink } from "./types";
 const menuElements: Array<MenuAndRouteElement> = [
   {
     path: "/",
+    name: "groups-index",
+    component: () => import("@/views/GroupsIndexView.vue"),
+    meta: { title: "Список групп" },
+    nameMenu: "Группы",
+    showInMenu: true,
+  },
+  {
+    path: "/home",
     name: "home",
     component: () => import("@/views/HomeView.vue"),
     meta: { title: "Home" },
