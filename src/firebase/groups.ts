@@ -2,6 +2,10 @@ import type { Group } from "@/types";
 import { db } from "./config";
 import { collection, getDocs } from "firebase/firestore";
 
+/**
+ * Название коллекций,
+ * поскольку оно будет использоваться несколько раз.
+ */
 const collectionName: string = "groups";
 
 /**
