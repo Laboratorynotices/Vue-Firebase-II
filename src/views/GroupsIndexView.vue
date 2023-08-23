@@ -10,8 +10,8 @@ const groups: Ref = ref<Group[]>([]);
  * Будет выполняться каждый раз,
  * когда документ будет "собран".
  */
-onMounted(async () => {
-  groups.value = await getGroups();
+onMounted(() => {
+  getGroups(groups);
 });
 </script>
 
