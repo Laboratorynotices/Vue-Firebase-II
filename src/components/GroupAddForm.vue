@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { addGroup } from '@/firebase/groups';
+import type { Group } from '@/types';
 import { ref } from 'vue';
 
 /**
@@ -48,8 +50,7 @@ const submit = async (event: any): Promise<boolean> => {
   }
 
   // Сохраняем данные в Firebase
-  // @TODO
-  console.log(groupName.value);
+  addGroup({ name: groupName.value } as Group);
 
   // Очищаем форму
   groupName.value = "";

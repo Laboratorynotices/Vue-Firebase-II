@@ -1,6 +1,13 @@
 import type { Group } from "@/types";
 import { db } from "./config";
-import { collection, getDocs, onSnapshot, query } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  DocumentReference,
+  getDocs,
+  onSnapshot,
+  query
+} from "firebase/firestore";
 import type { Ref } from "vue";
 
 /**
@@ -38,4 +45,14 @@ export const getGroups = (groups: Ref<Group[]>): void => {
     });
     groups.value = groupsTemp;
   });
+};
+
+/**
+ * Добавляем новую запись в коллекцию Groups
+ *
+ * @param group объект, который надо сохранить в Firebase
+ * @returns ссылку на только что добавленный документ
+ */
+export const addGroup = async (group: Group): Promise<DocumentReference> => {
+  return await addDoc(collection(db, collectionName), group);
 };
