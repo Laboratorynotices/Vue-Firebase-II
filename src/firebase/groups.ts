@@ -14,7 +14,7 @@ import type { Ref } from "vue";
  * Название коллекций,
  * поскольку оно будет использоваться несколько раз.
  */
-const collectionName: string = "groups";
+const COLLECTION_NAME: string = "groups";
 
 /**
  * Возвращает все документы "групп", что записаны в Firebase.
@@ -34,9 +34,9 @@ export const getGroups = (groups: Ref<Group[]>): void => {
    * об не использовании этой переменной.
    */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const querySnapshot = getDocs(collection(db, collectionName));
+  const querySnapshot = getDocs(collection(db, COLLECTION_NAME));
 
-  onSnapshot(query(collection(db, collectionName)), (querySnapshot) => {
+  onSnapshot(query(collection(db, COLLECTION_NAME)), (querySnapshot) => {
     // Объявляем временную переменную, куда будем собирать прочитанные данные.
     const groupsTemp: Group[] = [];
     querySnapshot.forEach((doc) => {
@@ -54,5 +54,5 @@ export const getGroups = (groups: Ref<Group[]>): void => {
  * @returns ссылку на только что добавленный документ
  */
 export const addGroup = async (group: Group): Promise<DocumentReference> => {
-  return await addDoc(collection(db, collectionName), group);
+  return await addDoc(collection(db, COLLECTION_NAME), group);
 };
