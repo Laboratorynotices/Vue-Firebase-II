@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, type Ref } from "vue";
-import { getGroups } from "@/firebase/groups";
+import { deleteGroup, getGroups } from "@/firebase/groups";
 import type { Group } from "@/types";
 import GroupAddForm from "@/components/GroupAddForm.vue";
 import IconTrashCan from "@/components/icons/IconTrashCan.vue";
@@ -31,7 +31,7 @@ onMounted(() => {
 
     <v-card-text>Текст</v-card-text>
     <v-card-actions>
-      <v-btn>
+      <v-btn @click="deleteGroup(group.id)">
         <template v-slot:prepend>
           <icon-trash-can></icon-trash-can>
         </template>
