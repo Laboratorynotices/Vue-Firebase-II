@@ -31,7 +31,7 @@ onMounted(() => {
 
     <v-card-text>Текст</v-card-text>
     <v-card-actions>
-      <v-btn prepend-icon="mdi-trash-can-outline">
+      <v-btn>
         <template v-slot:prepend>
           <icon-trash-can></icon-trash-can>
         </template>
