@@ -3,6 +3,7 @@ import { onMounted, ref, type Ref } from "vue";
 import { getGroups } from "@/firebase/groups";
 import type { Group } from "@/types";
 import GroupAddForm from "@/components/GroupAddForm.vue";
+import IconTrashCan from "@/components/icons/IconTrashCan.vue";
 
 // Указатель на хранилище групп
 const groups: Ref = ref<Group[]>([]);
@@ -29,6 +30,9 @@ onMounted(() => {
     </v-card-item>
 
     <v-card-text>Текст</v-card-text>
-    <v-card-actions>Действия</v-card-actions>
+    <v-card-actions>
+      <icon-trash-can></icon-trash-can>
+      Действия
+    </v-card-actions>
   </v-card>
 </template>
